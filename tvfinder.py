@@ -52,7 +52,7 @@ http://{}:6878/ace/getstream?id={}
         for a in range(len(ln)):
             f.write(pl.format(channel, ln[a], user_ip, lh[a][12:]))
 
-    print(user_ip)
+    print('playlist for ' + user_ip + ' created')
 else:
     print('bad choys bye bye')
 
