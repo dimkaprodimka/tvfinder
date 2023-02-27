@@ -3,7 +3,7 @@ import requests
 from sys import argv
 
 channel = argv[1]
-
+choys = argv[2]
 
 
 def get_tv_link(channel):
@@ -26,9 +26,10 @@ def get_tv_link(channel):
 
 ln, lh = get_tv_link(channel)
 
-
-tpl = input('Select type Playlist: 1-Acestream 2-VLC: ')
-
+if int(choys) < 1:
+	tpl = input('Select type Playlist: 1-Acestream 2-VLC: ')
+else:
+	tpl = choys
 if tpl == '1':
     pl = '''
 #EXTINF:-1 group-title="{}",{}
@@ -52,7 +53,7 @@ http://{}:6878/ace/getstream?id={}
         for a in range(len(ln)):
             f.write(pl.format(channel, ln[a], user_ip, lh[a][12:]))
 
-    print('playlist for ' + user_ip + ' created')
+    print(user_ip)
 else:
     print('bad choys bye bye')
 
