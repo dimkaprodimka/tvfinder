@@ -6,7 +6,7 @@ name: tvfinder
 on:
   push:  
     branches:
-    - master
+    - main
 
 
 permissions:
