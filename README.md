@@ -1,6 +1,6 @@
 # acestream playlist creator
 Use:
-tvfinder-docker.py <channel or preffix like [pl]> <format playlist: ace,vlc> <ip acestream-server, or none>
+tvfinder-docker.py <channel or preffix like sport [DE]> <format playlist: ace,vlc> <ip acestream-server, or none>
 example:
 python3 tvfinder-docker.py hbo ace n
 python3 tvfinder-docker.py hbo vlc 127.0.0.1
