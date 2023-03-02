@@ -4,6 +4,9 @@ from sys import argv
 
 channel = argv[1]
 choys = argv[2]
+ip = argv[3]
+
+
 
 def get_tv_link(channel):
     url = f'https://acestreamsearch.net/?q={channel}'
@@ -18,41 +21,34 @@ def get_tv_link(channel):
     for a in a_tags:
         name = a.text
         href = a['href']
-        print('{}\t{}'.format(name, href))
+#        print('{}\t{}'.format(name, href))
         list_name.append(name)
         list_href.append(href)
     return list_name, list_href
 
 ln, lh = get_tv_link(channel)
 
-if int(choys) < 1:
-	tpl = input('Select type Playlist: 1-Acestream 2-VLC: ')
-else:
-	tpl = choys
-if tpl == '1':
+if choys == 'ace':
     pl = '''
 #EXTINF:-1 group-title="{}",{}
 {}
     '''
-    with open(channel+'.m3u', 'w') as f:
-        f.write('#EXTM3U\n')
-        for a in range(len(ln)):
-            f.write(pl.format(channel, ln[a],  lh[a]))
+    print('#EXTM3U\n')
+    for a in range(len(ln)):
+        print(pl.format(channel, ln[a],  lh[a]))
             
-elif tpl == '2':
-    user_ip = input('input ip acestream server for playlist 127.0.0.1 or remoteIP: ')
+elif choys == 'vlc':
+    user_ip = ip
 
     pl = '''
 #EXTINF:-1 group-title="{}",{}
 http://{}:6878/ace/getstream?id={}
     '''
 
-    with open(channel+'.m3u', 'w') as f:
-        f.write('#EXTM3U\n')
-        for a in range(len(ln)):
-            f.write(pl.format(channel, ln[a], user_ip, lh[a][12:]))
+    print('#EXTM3U\n')
+    for a in range(len(ln)):
+        print(pl.format(channel, ln[a], user_ip, lh[a][12:]))
 
-    print(user_ip)
 else:
     print('bad choys bye bye')
 
