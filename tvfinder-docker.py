@@ -7,7 +7,6 @@ choys = argv[2]
 ip = argv[3]
 
 
-
 def get_tv_link(channel):
     url = f'https://acestreamsearch.net/?q={channel}'
     content = requests.get(url).text
@@ -45,7 +44,7 @@ elif choys == 'vlc':
 http://{}:6878/ace/getstream?id={}
     '''
 
-    print('#EXTM3U\n')
+    print('#EXTM3U\n\n')
     for a in range(len(ln)):
         print(pl.format(channel, ln[a], user_ip, lh[a][12:]))
 
