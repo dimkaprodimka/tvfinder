@@ -26,3 +26,4 @@ cat sport.m3u
 select format playlist acestream or m3u for vlc and iptv, next write ip addr acestream server (default localhost: 127.0.0.1)
 
 cat sport.m3u
+
