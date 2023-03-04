@@ -6,6 +6,7 @@ tvfinder-docker.py <channel or preffix like sport [DE]> <format playlist: ace,vl
 example:
 
 python3 tvfinder-docker.py hbo ace n
+
 python3 tvfinder-docker.py hbo vlc 127.0.0.1
 
 Docker:
