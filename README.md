@@ -16,7 +16,7 @@ docker build -t tvfinder .
 docker run --rm -a stdout --name tv tvfinder:latest hbo vlc 127.0.0.1    "or add"  > channel.m3u
 
 
-python3 tvfinder.py <channel or prefix>
+python3 tvfinder.py <channel> or <prefix>
 
 example: 
 python3 tvfinder.py sport
