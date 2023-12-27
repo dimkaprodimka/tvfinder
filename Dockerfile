@@ -1,10 +1,7 @@
-FROM ubuntu:latest
+FROM python:3.9.18-slim
  
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip && \
-rm -rf /var/lib/apt/lists/* && \
-pip install bs4 && \
-pip install requests
+RUN pip install bs4 && pip install requests
 
 COPY ./tvfinder-docker.py /app/tvfinder.py
 ENTRYPOINT ["python3", "/app/tvfinder.py"]
-CMD ["param1", "param2"]
+CMD []
